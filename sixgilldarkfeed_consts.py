@@ -6,7 +6,7 @@
 
 
 SIXGILL_API_ID_CFG = "sixgill_client_id"
-SIXGILL_API_SECRET_KEY_CFG = "sixgill_client_secret_key"
+SIXGILL_API_SECRET_KEY_CFG = "sixgill_client_secret_key"  # pragma: allowlist secret
 SIXGILL_VERIFY_SSL = "verify_ssl"
 AUTH_TOKEN = "phantom_auth_token"
 SIXGILL_CHANNEL_ID = "d6803eff87582a695d5630f1a52152bf"

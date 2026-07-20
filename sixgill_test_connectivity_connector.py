@@ -24,13 +24,17 @@ class SixgillTestConnectivityConnector(object):
         config = connector.get_config()
         self._sixgill_client_id = config[SIXGILL_API_ID_CFG]
         self._sixgill_api_secret_key = config[SIXGILL_API_SECRET_KEY_CFG]
+        self._verify_ssl = config[SIXGILL_VERIFY_SSL]
         self._sixgill_phantom_channel_id = SIXGILL_CHANNEL_ID
 
     def test_connectivity(self):
         action_result = self._connector.add_action_result(ActionResult(dict()))
         self._connector.save_progress(SIXGILL_TEST_CONNECTIVITY_MSG)
         sixgill_valid_credentials = SixgillBaseClient(
-            self._sixgill_client_id, self._sixgill_api_secret_key, self._sixgill_phantom_channel_id
+            self._sixgill_client_id,
+            self._sixgill_api_secret_key,
+            self._sixgill_phantom_channel_id,
+            verify=self._verify_ssl,
         )
         try:
             if sixgill_valid_credentials._get_access_token():

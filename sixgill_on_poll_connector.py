@@ -98,6 +98,7 @@ class SixgillOnPollConnector(object):
                 self._sixgill_phantom_channel_id,
                 FeedStream.DARKFEED,
                 bulk_size=self._limit,
+                verify=self._verify_ssl,
             )
             indicator_object = darkfeed_client.get_bundle().get("objects")
         except Exception as e:
