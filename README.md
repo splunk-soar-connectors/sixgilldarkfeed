@@ -1,5 +1,5 @@
 # Sixgill Darkfeed
 
-Connector Version: 1.0.1
+Connector Version: 2.0.0
 
 This connector integrates Splunk SOAR with Sixgill Darkfeed.
